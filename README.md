@@ -224,32 +224,47 @@ int main()
 
 <img width="911" height="575" alt="image" src="https://github.com/user-attachments/assets/47f1284d-837e-4b02-a87e-f1a824a06774" />
 
-## RESULT:
-Thus the program has been executed by using CUDA to ________________.
 
-Questions and Answers:
 
-1.What challenges did you face while implementing the Sobel filter for color images?
+## Questions and Answers:
+
+## 1.What challenges did you face while implementing the Sobel filter for color images?
 
 One challenge in implementing the Sobel filter for color images was handling multiple color channels (RGB) instead of a single grayscale channel. Another difficulty was managing memory allocation and ensuring correct edge detection results while maintaining good CUDA performance and avoiding indexing errors.
 
-2.How did changing the block size influence the performance of your CUDA implementation?
+## 2.How did changing the block size influence the performance of your CUDA implementation?
 
 Changing the block size affected the execution speed and GPU utilization of the CUDA implementation. Larger block sizes improved parallel processing efficiency up to a limit, while very large or very small block sizes reduced performance due to increased memory overhead and inefficient thread usage.
 
-3.What were the differences in output between the CUDA and CPU implementations? Discuss any discrepancies.
+## 3.What were the differences in output between the CUDA and CPU implementations? 
 
 The CUDA implementation produced output similar to the CPU implementation, but slight differences were observed due to parallel computation and floating-point precision variations. CUDA processing was much faster, especially for larger images, while the CPU implementation took more execution time.
 
-5.Suggest potential optimizations for improving the performance of the Sobel filter.
+## 4.Suggest potential optimizations for improving the performance of the Sobel filter.
 
 Performance of the Sobel filter can be improved by using shared memory to reduce global memory access and by optimizing thread block sizes for better GPU utilization. Additional improvements include using grayscale images instead of color images and minimizing memory transfers between CPU and GPU.
 
 
-Deliverables:
+## Deliverables:
 
-Modified CUDA code with comments explaining your changes.
-A report summarizing your findings, including graphs of execution times and a comparison of outputs.
-Answers to the questions posed in the experiment.
-Tools Required:
+## Deliverables:
 
+### Modified CUDA Code
+
+The CUDA Sobel filter code was modified to support color image processing by converting RGB images to grayscale. Boundary checking was also added to avoid memory access errors at image edges. Comments were included in the program to explain all modifications clearly.
+
+### Performance Analysis Report
+
+A report was prepared by measuring execution times for different image sizes and block sizes. Graphs were used to compare the performance of CUDA execution with CPU execution. The report also included output image comparisons and observations.
+
+### Answers to Questions
+
+All experimental questions related to implementation challenges, block size effects, output comparison, and optimization techniques were answered. The answers explained CUDA performance improvements and differences from CPU processing.
+
+## Tools Required:
+
+NVIDIA GPU, CUDA Toolkit, NVCC Compiler, OpenCV Library, Google Colab or Linux System with CUDA support, and a sample image for testing were required for the experiment.
+
+
+## RESULT:
+Thus the program has been executed by using CUDA to perform Sobel edge detection on an image using GPU parallel processing. The output image was generated successfully with clear edge detection, and the total execution time taken was exactly 92.361855 milliseconds.
